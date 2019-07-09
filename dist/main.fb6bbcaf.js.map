@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/main.js"],"names":["code","document","getElementById","textContent"],"mappings":"AAAA,IAAIA,IAAI,GAAGC,QAAQ,CAACC,cAAT,CAAwB,OAAxB,CAAX;AAEAF,IAAI,CAACG,WAAL,GAAmB,IAAnB","file":"main.fb6bbcaf.js","sourceRoot":"..","sourcesContent":["var code = document.getElementById('#code')\r\n\r\ncode.textContent = 'hi'"]}
