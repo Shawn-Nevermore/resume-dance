@@ -1,5 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html {
+    font-family: Source Code Variable, Fira Code, Consolas, "微软雅黑";
+    
 }

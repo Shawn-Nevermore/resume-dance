@@ -1,1 +1,1 @@
-{"version":3,"sources":["css/default.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","file":"default.708faaf5.css","sourceRoot":"..","sourcesContent":["* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n}"]}
+{"version":3,"sources":["css/default.css"],"names":[],"mappings":"AAAA;AACA;AACA","file":"default.708faaf5.css","sourceRoot":"..","sourcesContent":["* {\r\n    font-family: Source Code Variable, Fira Code, Consolas, \"微软雅黑\";\r\n}"]}

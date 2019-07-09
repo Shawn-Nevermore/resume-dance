@@ -118,8 +118,19 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/main.js":[function(require,module,exports) {
-var code = document.getElementById('#code');
-code.textContent = 'hi';
+var code = document.querySelector('.html');
+var styleTag = document.querySelector('#styleTag');
+var css = "/**\n * Hello\uFF0C\u4F60\u597D\uFF0C\u6B22\u8FCE\u6765\u5230\u8FD9\u91CC\u3002\n * \u6211\u53EB\u8BB8\u9A81\uFF0C\u662F\u4E00\u540D\u524D\u7AEF\u6C42\u804C\u8005\u3002\n * \u6587\u5B57\u592A\u67AF\u71E5\u4E86\uFF0C\u6211\u4EEC\u6765\u770B\u4EE3\u7801\u5427\u3002Let's get started!\n */\n\n/**\n * \u672C\u7AD9\u4F1A\u7528\u52A8\u753B\u7684\u5F62\u5F0F\u6765\u9010\u6B65\u5C55\u793A\u2026\u2026\u55EF\uFF0C\u6240\u6709\u5185\u5BB9\n */\n\n* {\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n    transition: all 1s ease-in-out;\n}\n\n.html {\n    background: rgb(40, 44, 52);\n    // color: white;\n    border: 2px solid #ddd;\n    padding: 1em;\n}\n\n/**\n * \n";
+var n = 0;
+var id = window.setInterval(function () {
+  n += 1;
+  code.textContent = css.substring(0, n);
+  styleTag.textContent = css.substring(0, n);
+
+  if (n >= css.length) {
+    window.clearInterval(id);
+  }
+}, 10);
 },{}],"../../../Users/Shawn-Nevermore/AppData/Roaming/npm-cache/_npx/16984/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
