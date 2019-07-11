@@ -20,22 +20,28 @@ var css = `/**
 
 #code {
     background: rgb(45, 45, 45);
-    font-size: 16px;
-    color: white;
+    color: #ffffc8;
     border: 2px solid #ddd;
-    padding: 1em;
+    padding: 2em;
 }
 
 /**
- * 
-`
+ * 看起来有点单调，我们给code加点色彩
+ */
+
+
+
+
+
+ ` 
+
 
 
 let n = 0
 let id = setInterval(() => {
     n += 1
     code.textContent = css.substring(0, n)
-    code.textContent = Prism.highlight(code.textContent, Prism.languages.css)
+    code.innerHTML = Prism.highlight(code.textContent, Prism.languages.css, 'css')
     styleTag.textContent = css.substring(0, n)
     if (n >= css.length) {
         clearInterval(id)
