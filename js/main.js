@@ -27,19 +27,18 @@ html {
 
 #code {
     color: white;
-}    
-
-/* 看起来有点单调，我们给code加点色彩 */
-
-#code {
     background: rgb(45, 45, 45);
     overflow: auto;
     border: 1px solid #ccc;
     width: 49%;
+    height: 100%;
     padding: 2rem;
     margin: 2rem;
     white-space: pre-wrap;
-  }
+}
+
+/* 看起来有点单调，我们给code加点色彩 */
+
 .token.selector, .token.keyword {
     color: #cc99cd;
     font-weight: bold;
@@ -55,16 +54,32 @@ html {
 }
 
 /* 不够动感？来点呼吸效果 */
+
 #code {
     animation: breath 1s infinite alternate-reverse;
 }
 
+#code {
+    transform: translateX(95%);
+    position: absolute;
+}
 
-
+body {
+    perspective: 1000px;
+  }
+  
+#code {
+    transform: translateX(98.5%) rotateY(-10deg);
+    transform-origin: right;
+    max-height: 94.5%;
+}
+  
+pre:not(#code) {
+    transform: rotateY(10deg);
+    transform-origin: left;
+}
 
 `
-
-
 
 let n = 0
 let id = setInterval(() => {

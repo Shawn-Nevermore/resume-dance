@@ -10,6 +10,10 @@ html {
     font: black;
 }
 
+body {
+    height: 100vh;
+}
+
 .token.property, .token.selector, .token.punctuation, .token.function {
     color: black;
     font-weight: normal;
@@ -17,9 +21,13 @@ html {
 
 @keyframes breath {
     0% {
-        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2)
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2)
     }
     100% {
-        box-shadow: 0 0 2rem rgba(255, 255, 255, 0.8)
+        box-shadow: 0 0 3rem rgba(255, 255, 255, 0.8)
     }
+}
+
+#code:hover {
+    animation-play-state: paused;
 }
