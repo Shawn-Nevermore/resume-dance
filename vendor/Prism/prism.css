@@ -48,7 +48,7 @@ pre[class*="language-"] {
 }
 
 .token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata {
-    color: #999;
+    color: #aaa;
 }
 
 .token.punctuation {
@@ -68,7 +68,7 @@ pre[class*="language-"] {
 }
 
 .token.property, .token.class-name, .token.constant, .token.symbol {
-    color: #ff8040;
+    color: #f8a837;
 }
 
 .token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin {

@@ -1,8 +1,25 @@
-#code {
-    font-family: Source Code Variable, Fira Code, Consolas, "微软雅黑";
-    font-size: 14px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.token.comment, .token.block-comment, .token.prolog, .token.doctype, .token.cdata, .token.punctuation, .token.tag, .token.attr-name, .token.namespace, .token.deleted, .token.function-name, .token.boolean, .token.number, .token.function, .token.property, .token.class-name, .token.constant, .token.symbol, .token.selector, .token.important, .token.atrule, .token.keyword, .token.builtin, .token.string, .token.char, .token.attr-value, .token.regex, .token.variable, .token.operator, .token.entity, .token.url {
+html {
+    font-family: Source Code Variable, Fira Code, Consolas, "微软雅黑";
+    font-size: 14px;
+    font: black;
+}
+
+.token.property, .token.selector, .token.punctuation, .token.function {
     color: black;
+    font-weight: normal;
+}
+
+@keyframes breath {
+    0% {
+        box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2)
+    }
+    100% {
+        box-shadow: 0 0 2rem rgba(255, 255, 255, 0.8)
+    }
 }
