@@ -1,7 +1,7 @@
-var code = document.querySelector('#code')
-var styleTag = document.querySelector('#styleTag')
+var code = document.querySelector("#code")
+var styleTag = document.querySelector("#styleTag")
 
-var css = `/**
+var css1 = `/**
  * Hello，你好，欢迎来到这里。
  * 我叫许骁，是一名前端求职者，下面我来自我介绍。
  * 
@@ -10,7 +10,7 @@ var css = `/**
  */
 
 * {
-    transition: all 1s ease-in-out;
+    transition: all .8s ease-in-out;
 }
 
 html {
@@ -54,9 +54,8 @@ html {
 }
 
 /* 不够动感？来点呼吸效果 */
-
 #code {
-    animation: breath 1s infinite alternate-reverse;
+    animation: breath 1.2s infinite alternate-reverse;
 }
 
 #code {
@@ -66,28 +65,78 @@ html {
 
 body {
     perspective: 1000px;
-  }
+}
   
 #code {
     transform: translateX(98.5%) rotateY(-10deg);
     transform-origin: right;
     max-height: 94.5%;
 }
-  
-pre:not(#code) {
-    transform: rotateY(10deg);
-    transform-origin: left;
-}
 
+/** 
+ * 那么接下来，就正式开始写我的简历吧
+ * 首先，我需要一张白纸
+ */
+`
+
+var css2 = `
+#paper {
+    background: #ddd;
+    width: 48%;
+    height: 100%;
+    padding: 2rem;
+    margin: 2rem;
+    position: absolute;
+    transform: translateX(-1.5%) rotateY(10deg);
+    transform-origin: left;
+    max-height: 94.5%;
+    white-space: pre-wrap;
+}
 `
 
 let n = 0
 let id = setInterval(() => {
     n += 1
-    code.textContent = css.substring(0, n)
-    code.innerHTML = Prism.highlight(code.textContent, Prism.languages.css, 'css')
-    styleTag.textContent = css.substring(0, n)
-    if (n >= css.length) {
+    code.innerHTML = css1.substring(0, n)
+    code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.css, "css")
+    styleTag.textContent = css1.substring(0, n)
+    if (n >= css1.length) {
         clearInterval(id)
+        fn2()
+        fn3(css1)
     }
 }, 0)
+
+function fn2() {
+    var paper = document.createElement("div")
+    paper.id = "paper"
+    code.insertAdjacentElement("afterend", paper)
+}
+
+function fn3(preContext) {
+    let n = 0
+    let id = setInterval(() => {
+        n += 1
+        code.innerHTML = preContext + css2.substring(0, n)
+        code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.css, "css")
+        if (n >= css2.length) {
+            clearInterval(id)
+        }
+        styleTag.textContent = preContext + css2.substring(0, n)
+    }, 0)
+}
+
+function writeTo() {
+    let n = 0
+    let id = setInterval(() => {
+        n += 1
+        code.innerHTML = css1.substring(0, n)
+        code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.css, "css")
+        styleTag.textContent = css1.substring(0, n)
+        if (n >= css1.length) {
+            clearInterval(id)
+            fn2()
+            fn3(css1)
+        }
+    }, 0)
+}

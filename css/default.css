@@ -11,23 +11,28 @@ html {
 }
 
 body {
+    width: 100vw;
     height: 100vh;
 }
 
-.token.property, .token.selector, .token.punctuation, .token.function {
+.token.property,
+.token.selector,
+.token.punctuation,
+.token.function {
     color: black;
     font-weight: normal;
 }
 
 @keyframes breath {
     0% {
-        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2)
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
     }
     100% {
-        box-shadow: 0 0 3rem rgba(255, 255, 255, 0.8)
+        box-shadow: 0 0 3rem rgba(255, 255, 255, 0.8);
     }
 }
 
 #code:hover {
+    box-shadow: 0 0 3rem rgba(255, 255, 255, 0.8);
     animation-play-state: paused;
 }
