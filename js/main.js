@@ -10,7 +10,7 @@ var css1 = `/**
  */
 
 * {
-    transition: all .8s ease-in-out;
+    transition: all .6s ease-in-out;
 }
 
 html {
@@ -94,49 +94,54 @@ var css2 = `
 }
 `
 
-let n = 0
-let id = setInterval(() => {
-    n += 1
-    code.innerHTML = css1.substring(0, n)
-    code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.css, "css")
-    styleTag.textContent = css1.substring(0, n)
-    if (n >= css1.length) {
-        clearInterval(id)
-        fn2()
-        fn3(css1)
-    }
-}, 0)
+var md = `
+# 许骁
+--------
 
-function fn2() {
+# 项目经历
+# 
+`
+
+writeTo("", css1, () => {
+    createPaper(() => {
+        writeTo(css1, css2, () => {
+            writeMd(md)
+        })
+    })
+})
+
+function createPaper(fn) {
     var paper = document.createElement("div")
     paper.id = "paper"
     code.insertAdjacentElement("afterend", paper)
+    fn.call()
 }
 
-function fn3(preContext) {
+function writeTo(prefix, cssCode, fn) {
+    code.innerHTML = prefix || ""
     let n = 0
     let id = setInterval(() => {
         n += 1
-        code.innerHTML = preContext + css2.substring(0, n)
-        code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.css, "css")
-        if (n >= css2.length) {
+        code.innerHTML = Prism.highlight(prefix + cssCode.substring(0, n), Prism.languages.css)
+        styleTag.textContent = prefix + cssCode.substring(0, n)
+        code.scrollTop = code.scrollHeight
+        if (n >= cssCode.length) {
             clearInterval(id)
+            fn.call()
         }
-        styleTag.textContent = preContext + css2.substring(0, n)
     }, 0)
 }
 
-function writeTo() {
+function writeMd(md, fn) {
+    let paper = document.querySelector("#paper")
     let n = 0
     let id = setInterval(() => {
         n += 1
-        code.innerHTML = css1.substring(0, n)
-        code.innerHTML = Prism.highlight(code.innerHTML, Prism.languages.css, "css")
-        styleTag.textContent = css1.substring(0, n)
-        if (n >= css1.length) {
+        paper.innerHTML = Prism.highlight(md.substring(0, n), Prism.languages.markdown)
+        paper.scrollTop = paper.scrollHeight
+        if (n >= md.length) {
             clearInterval(id)
-            fn2()
-            fn3(css1)
+            fn.call()
         }
     }, 0)
 }
