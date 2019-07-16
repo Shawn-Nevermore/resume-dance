@@ -33,6 +33,5 @@ body {
 }
 
 #code:hover {
-    box-shadow: 0 0 3rem rgba(255, 255, 255, 0.8);
     animation-play-state: paused;
 }

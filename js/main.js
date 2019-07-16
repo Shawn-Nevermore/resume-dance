@@ -55,7 +55,7 @@ html {
 
 /* 不够动感？来点呼吸效果 */
 #code {
-    animation: breath 1.2s infinite alternate-reverse;
+    animation: breath 1s infinite alternate-reverse;
 }
 
 #code {
@@ -97,6 +97,9 @@ var css2 = `
 var md = `
 # 许骁
 --------
+求职岗位：前端开发
+毕业院校：电子科技大学
+
 
 # 项目经历
 # 
@@ -129,7 +132,7 @@ function writeTo(prefix, cssCode, fn) {
             clearInterval(id)
             fn.call()
         }
-    }, 0)
+    }, 20)
 }
 
 function writeMd(md, fn) {
@@ -137,11 +140,11 @@ function writeMd(md, fn) {
     let n = 0
     let id = setInterval(() => {
         n += 1
-        paper.innerHTML = Prism.highlight(md.substring(0, n), Prism.languages.markdown)
+        paper.innerHTML = md.substring(0, n)
         paper.scrollTop = paper.scrollHeight
         if (n >= md.length) {
             clearInterval(id)
             fn.call()
         }
-    }, 0)
+    }, 50)
 }
