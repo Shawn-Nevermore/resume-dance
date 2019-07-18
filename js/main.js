@@ -55,6 +55,7 @@ html {
 }
 
 /* 不够动感？来点呼吸效果 */
+
 #code {
     animation: breath 1s infinite alternate-reverse;
 }
@@ -102,11 +103,13 @@ body {
 毕业院校：电子科技大学-软件工程
 
 ## 技能树
-- 熟悉HTML(5)/CSS(3)/JavaScript
+- 熟悉HTML(5) / CSS(3) / JavaScript
 - 熟悉Ajax、DOM、HTTP协议
 - 熟练使用Vue
-- 用过Webpack打包工具
+- Webpack打包工具
 - 有移动端开发经验
+- 有Node实战经验
+- 有一定的设计模式思想
 - 熟练使用Linux、Git工作流
 - 计算机基础知识扎实
 
@@ -118,17 +121,24 @@ body {
 5. [许骁个站](https://uiao.info/)
 
 ## 足迹
-1. [简书blog](https://www.jianshu.com/u/9e10fddb2bba)
+1. 博客：[简书](https://www.jianshu.com/u/9e10fddb2bba)
 2. [github](https://github.com/Shawn-Nevermore)
 
 ## 联系方式
-email：uiao.xx@gmail.com uiao.xx@qq.com
-wechat：john60155
+Email：uiao.xx@gmail.com
+WeChat：john60155
+Tel：166****1234
     `
     let css3 = `
 /**
  * markdown写完了，是时候把它转化为HTML了
  */
+    `
+
+    let css4 = `
+/**
+ * 如果您有兴趣更全面地了解我，那么请快快联系我吧 :)
+ */ 
     `
 
     // 初尝回调地狱
@@ -137,7 +147,9 @@ wechat：john60155
             writeTo(css1, css2, () => {
                 writeMd(md, () => {
                     writeTo(css1 + css2, css3, () => {
-                        renderMd(() => {})
+                        renderMd(() => {
+                            writeTo(css1 + css2 + css3, css4)
+                        })
                     })
                 })
             })
@@ -174,7 +186,7 @@ wechat：john60155
                 clearInterval(id)
                 fn && fn.call()
             }
-        }, 0)
+        }, 20)
     }
 
     /**
@@ -194,7 +206,7 @@ wechat：john60155
                 clearInterval(id)
                 fn && fn.call()
             }
-        }, 0)
+        }, 30)
     }
 
     /**
@@ -203,14 +215,11 @@ wechat：john60155
      * @param {*} fn
      */
     function renderMd(fn) {
-        // let content = document.querySelector('#paper > .content')
-        // content.innerHTML = marked(md)
-
         let div = document.createElement('div')
         div.className = 'html markdown-body'
         div.innerHTML = marked(md)
         let markdownContainer = document.querySelector('#paper > .content')
-        markdownContainer.replaceWith(div)
+        markdownContainer.replaceWith(div) // 使用 github-markdown.css 中的效果
         fn && fn.call()
     }
 })()
