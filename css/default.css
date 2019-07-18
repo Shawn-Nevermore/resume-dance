@@ -5,13 +5,12 @@
 }
 
 html {
-    font-family: Source Code Variable, Fira Code, Consolas, "微软雅黑";
+    font-family: Source Code Variable, Fira Code, Consolas, '微软雅黑';
     font-size: 14px;
     font: black;
 }
 
 body {
-    width: 100vw;
     height: 100vh;
 }
 
@@ -34,4 +33,8 @@ body {
 
 #code:hover {
     animation-play-state: paused;
+}
+
+#paper > .content {
+    padding: 2rem;
 }
