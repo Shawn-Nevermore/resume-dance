@@ -114,12 +114,12 @@ body {
 - 计算机基础知识扎实
 
 ## 项目经历
-1. [导航狂魔](https://uiao.info/myBookmarks)
-2. [小画板](https://uiao.info/canvas-demo)
-3. [简历跳动](https://uiao.info/resume-dance)
-4. [小黄人](https://uiao.info/minion)
-5. [纯CSS八卦](https://uiao.info/YinYang)
-6. [许骁个站](https://uiao.info)
+1. [导航狂魔](https://uiao.me/myBookmarks)
+2. [小画板](https://uiao.me/canvas-demo)
+3. [简历跳动](https://uiao.me/resume-dance)
+4. [小黄人](https://uiao.me/minion)
+5. [纯CSS八卦](https://uiao.me/YinYang)
+6. [许骁个站](https://uiao.me)
 
 ## 足迹
 1. 博客：[简书](https://www.jianshu.com/u/9e10fddb2bba)
@@ -128,7 +128,7 @@ body {
 ## 联系方式
 Email：uiao.xx@gmail.com
 WeChat：john60155
-Tel：166****1234
+Tel：16602839112
     `
     let css3 = `
 /**
@@ -187,7 +187,7 @@ Tel：166****1234
                 clearInterval(id)
                 fn && fn.call()
             }
-        }, 20)
+        }, 10)
     }
 
     /**
