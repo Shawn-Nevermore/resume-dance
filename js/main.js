@@ -115,7 +115,7 @@ body {
 
 ## 项目经历
 1. [导航狂魔](https://uiao.me/myBookmarks)
-2. [小画板](https://uiao.me/canvas-demo)
+2. [小画板](https://uiao.me/graffiti)
 3. [简历跳动](https://uiao.me/resume-dance)
 4. [小黄人](https://uiao.me/minion)
 5. [纯CSS八卦](https://uiao.me/YinYang)
